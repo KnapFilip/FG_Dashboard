@@ -3,11 +3,11 @@ header{
     color: rgb(255, 255, 255);
     font-size: 10px;
     font-family: 'Arial';
-    width: 100%;
-    overflow: hidden;
+    left: 0;
+    top: 0;
 }
 body{
-    background-color: rgb(54, 54, 54);
+    background-color: rgb(62, 62, 62);
 }
 h1{ 
     color: rgb(255, 255, 255);
@@ -36,7 +36,7 @@ p{
 }
 footer
 {
-    background-color: #a70202;
+    background-color: rgb(62, 62, 62);
     font-size: 2px;
     font-family: 'Arial';
     float: inline-end;
@@ -46,15 +46,16 @@ footer
 ul
  {
     list-style-type: none;
+    margin: 0;
     padding: 0;
-    top: 9%;
+    top: 11%;
     overflow: hidden;
-    background-color: #282828;
+    background-color: rgb(40, 40, 40);
     display: block;
     position: fixed;
     width: 15%;
     height: 100%;
-    left: 0px;
+    left: 5;
 }
 
 li 
@@ -70,7 +71,6 @@ li a
     color: white;
     text-align: center;
     padding: 2px;
-    display: flex;
 }
 li a:hover
 {
