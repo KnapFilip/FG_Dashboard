@@ -34,14 +34,13 @@ p{
     font-style: italic;
     margin: 15px;
 }
-footer
-{
-    background-color: rgb(62, 62, 62);
+footer{
+    background-color: rgb(54, 54, 54);
     font-size: 2px;
     font-family: 'Arial';
-    float: inline-end;
     text-align: center;
-    width: 100%;
+    width: 75%;
+    margin-left: 14%;
 }
 section.navbarleft{
     height: 100%;

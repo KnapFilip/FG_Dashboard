@@ -8,11 +8,33 @@
     <title>Registration</title>
     <link rel="icon" type="image/png" href="images/logo_FG.png">
 </head>
-<header>
-</header>
 <br>
 <br>
 <body>
+    <div class="registration">
+        <form action="php/registration.php">
+            <h2>Registrační formulář</h2>
+            <label for="name">Jméno</label><br>
+            <input type="text" required><br>
+            <label for="surname">Příjmení</label><br>
+            <input type="text" required><br>
+            <label for="username">Uživatelské jméno</label><br>
+            <input type="text" placeholder="bez diakrytiky" required><br>
+            <label for="email">Email</label><br>
+            <input type="email" required><br>
+            <label for="dob">Datum narození</label><br>
+            <input type="date" required><br>
+            <label for="password">Heslo</label><br>
+            <input type="password" minlength="8" required><br>
+            <label for="confirmPassword">Potvrzení hesla</label><br>
+            <input type="password" required><br><br>
+            <input type="submit" value="Registrovat se"><br><br>
+
+        </form>
+
+
+    </div>
+
 </body>
 <footer>
     <!--Odkazy na sociální sítě-->
