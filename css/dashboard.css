@@ -4,6 +4,13 @@ header{
     font-size: 10px;
     font-family: 'Arial';
 }
+h1.ds{
+color: rgb(255, 255, 255);
+font-size: 75px;
+font-family: 'Arial';
+text-align: center;
+margin: 0px;
+}
 body{
     background-color: rgb(54, 54, 54);
 }
@@ -32,23 +39,22 @@ p{
     font-style: italic;
     margin: 15px;
 }
-footer
-{
+footer{
     background-color: #a70202;
     font-size: 2px;
     font-family: 'Arial';
-    float: inline-end;
     text-align: center;
+    width: 75%;
+    margin-left: 14%;
 }
-section.navbarleft
-{
+section.navbarleft{
     height: 100%;
     position: left;
     width: 100%;
 
 }
-ul
-{
+ul{
+
     list-style-type: none;
     padding: 0;
     top: 9%;
@@ -58,14 +64,13 @@ ul
     width: 15%;
     height: 100%;
     left: 8px;
+    position: fixed;
 }
-li 
-{
+li {
     font-size: large;
     text-align: center;
 }
-li a
-{
+li a{
     font-size: 20px;
     text-decoration: none;
     color: white;
@@ -75,16 +80,45 @@ li a
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-li a:hover
-{
+li a:hover{
     text-decoration: underline;
     background-color: #474646;
 }
-.Active
-{
+.Active{
     background-color: #ff3030;
 }
-section.content
-{
-    position: right center;
+div.content{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+div.order_number{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+}
+div.profile_info{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+}
+div.info{
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+}
+
+div.news{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+    overflow: hidden;
+    text-align: center;
 }
