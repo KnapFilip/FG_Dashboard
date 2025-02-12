@@ -43,41 +43,43 @@ footer
     text-align: center;
     width: 100%;
 }
-ul
- {
+section.navbarleft{
+    height: 100%;
+    position: left;
+    width: 100%;
+
+}
+ul{
+
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    top: 11%;
+    top: 9%;
     overflow: hidden;
-    background-color: rgb(40, 40, 40);
+    background-color: #282828;
     display: block;
-    position: fixed;
     width: 15%;
     height: 100%;
-    left: 5;
+    left: 8px;
+    position: fixed;
 }
-
-li 
-{
+li {
     font-size: large;
-    padding: 5px;
     text-align: center;
 }
-li a
-{
-    font-size: 23px;
+li a{
+    font-size: 20px;
     text-decoration: none;
     color: white;
     text-align: center;
-    padding: 2px;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
-li a:hover
-{
+li a:hover{
     text-decoration: underline;
     background-color: #474646;
 }
-.Active
-{
+.Active{
     background-color: #ff3030;
 }
