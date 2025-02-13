@@ -53,6 +53,12 @@ div.navbarleft{
     width: 100%;
 
 }
+div.grey{
+    height: 100%;
+    position: left;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
+}
 ul{
 
     list-style-type: none;
@@ -110,8 +116,8 @@ div.profile_info{
 }
 div.info{
     overflow: hidden;
-
     display: flex;
+    text-align: center;
     flex-direction: row;
    
 }
