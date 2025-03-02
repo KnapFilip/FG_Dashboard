@@ -4,13 +4,6 @@ header{
     font-size: 10px;
     font-family: 'Arial';
 }
-h1.ds{
-color: rgb(255, 255, 255);
-font-size: 75px;
-font-family: 'Arial';
-text-align: center;
-margin: 0px;
-}
 body{
     background-color: rgb(54, 54, 54);
 }
@@ -47,86 +40,39 @@ footer{
     width: 75%;
     margin-left: 14%;
 }
-div.navbarleft{
-    height: 100%;
-    position: left;
-    width: 100%;
-
-}
-div.grey{
-    height: 100%;
-    position: left;
-    width: 100%;
-    background-color: rgb(40, 40, 40);
-}
-ul{
-
-    list-style-type: none;
-    padding: 0;
-    top: 9%;
-    overflow: hidden;
-    display: block;
-    width: 15%;
-    height: 100%;
-    left: 8px;
-    position: fixed;
-}
-li {
-    font-size: large;
-    text-align: center;
-}
-li a{
+div.registration{
+    color: rgb(255, 255, 255);
     font-size: 20px;
-    text-decoration: none;
-    color: white;
+    font-family: 'Arial';
     text-align: center;
-    padding: 4px;
-    display: flex;
-    justify-content: center;
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 15px;
+    padding: 15px;
+    width: 50%;
+    margin-left: 25%;
 }
-li a:hover{
-    text-decoration: underline;
-    background-color: #474646;
-}
-.Active{
-    background-color: #ff3030;
-}
-div.content{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-    height: 100%;
-    overflow: hidden;
+input{
+    width: 50%;
+    border-radius: 15px;
+    background-color: transparent;
     text-align: center;
-    display: inline-block;
+    font-size: large;
+    margin: 5px;
+    display: center;
+    color: rgb(255, 255, 255);
+    border: 1px solid #ffffff;
 }
-div.order_number{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-}
-div.profile_info{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-}
-div.info{
-    overflow: hidden;
-    display: flex;
+label{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Arial';
     text-align: center;
-    flex-direction: row;
-   
 }
-
-div.news{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-    overflow: hidden;
-    text-align: center;
+input[type="submit"]{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Arial';
+    border: 1px solid #ffffff;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 5px;
 }
