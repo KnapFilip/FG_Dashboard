@@ -47,49 +47,86 @@ footer{
     width: 75%;
     margin-left: 14%;
 }
-div.registration{
-text-align: center;
+div.navbarleft{
+    height: 100%;
+    position: left;
+    width: 100%;
+
 }
-input{
-background-color: transparent;
-border: 2px solid;
-text-align: center;
-color: white;
-font-family: Arial, Helvetica, sans-serif;
-font-size: large;
-margin: 5px;
-width: 15%;
-border-radius: 15px;
-cursor: text;
+div.grey{
+    height: 100%;
+    position: left;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
 }
-label{
-color: white;
+ul{
+
+    list-style-type: none;
+    padding: 0;
+    top: 9%;
+    overflow: hidden;
+    display: block;
+    width: 15%;
+    height: 100%;
+    left: 8px;
+    position: fixed;
+}
+li {
+    font-size: large;
+    text-align: center;
+}
+li a{
     font-size: 20px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
-input[type=submit]{
-    background-color: transparent;
-    border: 2px solid;
-    text-align: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    margin: 5px;
-    width: 15%;
-    border-radius: 15px;
-    cursor: pointer;
+li a:hover{
+    text-decoration: underline;
+    background-color: #474646;
 }
-input[type=password]{
-    background-color: transparent;
-    border: 2px solid red;
+.Active{
+    background-color: #ff3030;
+}
+div.content{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+    height: 100%;
+    overflow: hidden;
     text-align: center;
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: large;
-    margin: 5px;
-    width: 15%;
-    border-radius: 15px;
-    cursor: pointer;
+    display: inline-block;
+}
+div.order_number{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+}
+div.profile_info{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+}
+div.info{
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+   
 }
 
-
+div.news{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+    overflow: hidden;
+    text-align: center;
+}

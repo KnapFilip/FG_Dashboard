@@ -51,7 +51,7 @@ div.navbarleft{
     height: 100%;
     position: left;
     width: 100%;
-
+    background-color: rgb(255, 255, 255);
 }
 div.grey{
     height: 100%;

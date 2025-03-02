@@ -47,11 +47,17 @@ footer{
     width: 75%;
     margin-left: 14%;
 }
-section.navbarleft{
+div.navbarleft{
     height: 100%;
     position: left;
     width: 100%;
 
+}
+div.grey{
+    height: 100%;
+    position: left;
+    width: 100%;
+    background-color: rgb(40, 40, 40);
 }
 ul{
 
@@ -59,7 +65,6 @@ ul{
     padding: 0;
     top: 9%;
     overflow: hidden;
-    background-color: #282828;
     display: block;
     width: 15%;
     height: 100%;
@@ -86,4 +91,42 @@ li a:hover{
 }
 .Active{
     background-color: #ff3030;
+}
+div.content{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    display: inline-block;
+}
+div.order_number{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+}
+div.profile_info{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+}
+div.info{
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+   
+}
+
+div.news{
+    margin-left: 15%;
+    padding: 1px;
+    width: 75%;
+    top: 1%;
+    overflow: hidden;
+    text-align: center;
 }
