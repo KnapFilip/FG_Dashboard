@@ -1,5 +1,10 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +15,7 @@
 </head>
 <br>
 <br>
+
 <body>
     <div class="registration">
         <form action="php/registration.php">
@@ -36,11 +42,12 @@
 </body>
 <footer>
     <!--Odkazy na sociální sítě-->
-        <a href="https://www.instagram.com/fida_knap/" target="_blank" style="padding: 10px;"><img src="images/instagram.png" alt="instagram" style="width: 4%; height: 4%;" class="IG"></a>
-        <a href="https://discord.gg/Msv22AUx3m" target="_blank" style="padding: 10px;"><img src="images/discord.png" alt="discord" style="width: 5%; height: 7%;" class="DC"></a>
-        <p>Created by Filip Knap with lot of ☕ and ❤️</p>
-        <p>© 2025 Knap Filip</p>
-    </footer>
+    <a href="https://www.instagram.com/fida_knap/" target="_blank" style="padding: 10px;"><img src="images/instagram.png" alt="instagram" style="width: 4%; height: 4%;" class="IG"></a>
+    <a href="https://discord.gg/Msv22AUx3m" target="_blank" style="padding: 10px;"><img src="images/discord.png" alt="discord" style="width: 5%; height: 7%;" class="DC"></a>
+    <p>Created by Filip Knap with lot of ☕ and ❤️</p>
+    <p>© 2025 Knap Filip</p>
+</footer>
+
 </html>
 
 <script src="js/validation.js"></script>
