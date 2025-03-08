@@ -1,8 +1,7 @@
-- Zařadit blažkuv web do projektů ✔️
-- Předělat Eshop (e-shop_new.html) ✔️
-- Udělat abych mohl web otevřít i na telefonu/tabletu ✔️
-- Vytvořit JS na počítání ceny ✔️
-- Vytvořit admin page na objednávky s pomocí (PHP, MySQL,JS)
-- Sjednotit styly ✔️
-- Přidat označení aktivní stránky (.active) ✔️
-- Nastavit ceny (Pojí se s novým eshopem) ✔️
+- Propojení registrace a loginu s databízí
+- Propojení objednávek s databází
+- Vyřešit aby vše bylo dostupné jenom po loginu
+- Udělat tabulku v objednávkách kam se budou objednávky řadit podle účtu
+- Vytvořit systém oprávnění (Uživatel, Filip Knap)
+- Uživatel uvidí (Dashboard, e-shop, order, profile)
+- Filip Knap uvidí (Dashboard, e-shop, order, profile + Objednávky všech (Vytvořit novu stránku "admin_orders.php" a propojit s databází))
