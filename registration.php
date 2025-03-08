@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+require_once 'php/username_verify.php';
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="images/logo.png">
     <link rel="stylesheet" href="css/registration.css">
-    <title>Registration</title>
+    <title>Registrace</title>
     <link rel="icon" type="image/png" href="images/logo_FG.png">
 </head>
 <br>
@@ -18,24 +19,31 @@
 
 <body>
     <div class="registration">
-        <form action="php/registration.php">
+        <form id="registerForm" action="php/registration.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event)">
             <h2>Registrační formulář</h2>
-            <label for="name">Jméno</label><br>
-            <input type="text" required><br>
-            <label for="surname">Příjmení</label><br>
-            <input type="text" required><br>
-            <label for="username">Uživatelské jméno</label><br>
-            <input type="text" placeholder="bez diakrytiky" required><br>
-            <label for="email">Email</label><br>
-            <input type="email" required><br>
-            <label for="dob">Datum narození</label><br>
-            <input type="date" required><br>
-            <label for="password">Heslo</label><br>
-            <input type="password" minlength="8" required><br>
-            <label for="confirm_Password">Potvrzení hesla</label><br>
-            <input type="confirm_Password" required><br><br>
-            <input type="submit" value="Registrovat se"><br><br>
 
+            <label for="name">Jméno</label><br>
+            <input type="text" name="name" required><br>
+
+            <label for="surname">Příjmení</label><br>
+            <input type="text" name="surname" required><br>
+
+            <label for="username">Uživatelské jméno</label><br>
+            <input type="text" name="username" placeholder="bez diakritiky" required><br>
+
+            <label for="email">Email</label><br>
+            <input type="email" name="email" required><br>
+
+            <label for="dob">Datum narození</label><br>
+            <input type="date" name="dob" required><br>
+
+            <label for="password">Heslo</label><br>
+            <input type="password" id="password" name="password" minlength="8" required><br>
+
+            <label for="confirm_password">Potvrzení hesla</label><br>
+            <input type="password" id="confirm_password" required><br>
+
+            <input type="submit" value="Registrovat se">
         </form>
     </div>
 
@@ -51,3 +59,4 @@
 </html>
 
 <script src="js/validation.js"></script>
+<script src="js/username_check.js"></script>

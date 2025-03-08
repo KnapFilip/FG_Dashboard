@@ -1,0 +1,8 @@
+- Zařadit blažkuv web do projektů ✔️
+- Předělat Eshop (e-shop_new.html) ✔️
+- Udělat abych mohl web otevřít i na telefonu/tabletu ✔️
+- Vytvořit JS na počítání ceny ✔️
+- Vytvořit admin page na objednávky s pomocí (PHP, MySQL,JS)
+- Sjednotit styly ✔️
+- Přidat označení aktivní stránky (.active) ✔️
+- Nastavit ceny (Pojí se s novým eshopem) ✔️

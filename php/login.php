@@ -2,45 +2,52 @@
 session_start();
 
 $servername = "cz1.helkor.eu";
-$username = "u1918_p0RJhKRM6N";
-$password = "FTE@Zh@5rq@z0^eawy8!su^r";
-$dbname = "s1918_users";
+$username = "u1918_D7TSELSLDS";
+$password = "l4B@l6OAg!xFgY.Wc89XKyjZ";
+$dbname = "s1918_dashboard";
 
-// Připojení k databázi
-$conn = new mysqli($servername, $username, $password, $dbname, 3306);
-
-// Kontrola připojení
-if ($conn->connect_error) {
-    die("Chyba připojení: " . $conn->connect_error);
+// PDO připojení k databázi
+try {
+    $pdo = new PDO("mysql:host=$servername;port=3306;dbname=$dbname;charset=utf8", $username, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    die("Chyba připojení k databázi.");
 }
 
-// Získání dat z formuláře
-$username = $_POST['username'];
-$email = $_POST['email'];
-$password = $_POST['password'];
+$error = ''; // Inicializace proměnné pro chyby
 
-// Příprava SQL dotazu
-$sql = "SELECT id, username, email, password FROM users WHERE username = ? AND email = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $username, $email);
-$stmt->execute();
-$result = $stmt->get_result();
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Ošetření vstupů z formuláře
+    $username = trim($_POST['username'] ?? '');
+    $password = $_POST['password'] ?? '';
 
-if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc();
+    // Validace, zda jsou pole vyplněná
+    if (!empty($username) && !empty($password)) {
+        // Příprava SQL dotazu pro vyhledání uživatele podle jména
+        $stmt = $pdo->prepare("SELECT * FROM User WHERE username = :username");
+        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
+        $stmt->execute();
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Ověření hesla
-    if (password_verify($password, $user['password'])) {
-        $_SESSION['user_id'] = $user['id'];
-        $_SESSION['username'] = $user['username'];
+        // Ověření, zda existuje uživatel a zda je heslo správné
+        if ($user && password_verify($password, $user['password'])) {
+            session_regenerate_id(true); // Zabrání session hijackingu
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['username'] = $user['username'];
 
-        echo "<script>alert('Přihlášení proběhlo úspěšně!'); window.location.href='../dashboard.html';</script>";
+            // Přesměrování na dashboard po úspěšném přihlášení
+            header("Location: ../dashboard.php");
+            exit;
+        } else {
+            // Chyba, pokud je uživatelské jméno nebo heslo nesprávné
+            $error = "Neplatné uživatelské jméno nebo heslo.";
+        }
     } else {
-        echo "<script>alert('Nesprávné heslo!'); window.history.back();</script>";
+        // Chyba, pokud některé pole není vyplněné
+        $error = "Vyplňte prosím všechna pole.";
     }
-} else {
-    echo "<script>alert('Uživatel nenalezen!'); window.history.back();</script>";
 }
 
-$stmt->close();
-$conn->close();
+if ($error) {
+    echo "<p style='color:red;'>$error</p>"; // Zobrazení chybové zprávy
+}

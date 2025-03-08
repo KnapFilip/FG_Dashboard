@@ -18,7 +18,7 @@
 
 <body>
     <div class="login">
-        <form action="php/login.php"></form>
+        <form action="php/login.php" method="POST" enctype="multipart/form-data"></form>
         <h1>Login</h1><br>
         <label for="username">Uživatelské jméno</label><br>
         <input type="text" id="username" name="username" required><br>
