@@ -14,7 +14,7 @@ header {
     z-index: 1000;
 }
 html{
-    width: 100vw;
+    width: 99vw;
     margin: 0px;
     padding: 0px;
 }
@@ -25,19 +25,22 @@ h1{
     color: rgb(255, 255, 255);
     font-size: 50px;
     font-family: 'Arial';
-    margin: 15px;
+    margin-left: 7.5%;
+    text-align: center;
 }
 h2{ 
     color: rgb(255, 255, 255);
     font-size: 30px;
     font-family: 'Arial';
-    margin: 15px;
+    margin-left: 10%;
+    text-align: center;
 }
 h3{ 
     color: rgb(255, 255, 255);
     font-size: 25px;
     font-family: 'Arial';
     margin: 15px;
+    text-align: center;
 }
 p{ 
     color: rgb(182, 182, 182);
@@ -45,6 +48,7 @@ p{
     font-family: 'Arial';
     font-style: italic;
     margin: 15px;
+    text-align: center;
 }
 footer{
     background-color: rgb(54, 54, 54);
@@ -127,4 +131,144 @@ div.news{
     top: 1%;
     overflow: hidden;
     text-align: center;
+}
+/* Dropdown v navigaci */
+li.dropdown {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+/* Hlavní tlačítko dropdownu */
+li.dropdown a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    background-color: rgb(40, 40, 40);
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover efekt na hlavním tlačítku */
+li.dropdown a:hover {
+    background-color: #474646;
+}
+
+/* Styl dropdown menu */
+ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(54, 54, 54);
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Odkazy v dropdown menu */
+ul.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+ul.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover efekt na položky dropdownu */
+ul.dropdown-menu li a:hover {
+    background-color: #474646;
+}
+
+/* Aktivní položka */
+ul.dropdown-menu .Active {
+    background-color: #ff3030;
+}
+
+/* Zobrazení dropdown menu při hoveru */
+li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+ /* Styly pro modální okno */
+ .modal {
+    display: none; /* Skrytí modálního okna */
+    position: fixed;
+    z-index: 1; /* Zajištění, že okno bude na vrchu */
+    top: 5%;
+    color: white;
+    width: 100%;
+    height: 75%;
+    background-color: rgba(0, 0, 0, 0.5); /* Polotransparentní pozadí */
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: auto;
+    z-index: 1; /* Zajištění, že okno bude na vrchu */
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 8px;
+    width: 75%;
+    text-align: center;
+    background-color: rgb(40, 40, 40); /* Polotransparentní pozadí */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Styling pro tlačítka a detaily objednávky */
+.order-button {
+    padding: 10px 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.order-button:hover {
+    background-color: #45a049;
+}
+
+.order-detail {
+    margin-bottom: 10px;
+}
+table {
+    width: 75%;
+    margin-left: 18.5%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 37%;
+    text-align: center;
+    font-size: large;
 }

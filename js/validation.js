@@ -1,4 +1,4 @@
-function validateForm(event) {
+function validatepassword(event) {
     event.preventDefault(); // Zabrání odeslání formuláře, pokud není správně vyplněný
 
     let password = document.getElementById("password").value;

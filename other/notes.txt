@@ -1,0 +1,1 @@
+- Předělat připojení k databázi do .env

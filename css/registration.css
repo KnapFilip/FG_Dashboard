@@ -78,3 +78,91 @@ input[type="submit"]{
     margin: 15px;
     padding: 5px;
 }
+h3 a:link{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Arial';
+    text-decoration: none;
+}
+h3 a:hover{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Arial';
+    text-decoration: underline;
+}
+h3 a:visited{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-family: 'Arial';
+    text-decoration: none;
+}
+/* Dropdown v navigaci */
+li.dropdown {
+    position: relative;
+    display: block;
+    text-align: center;
+}
+
+/* Hlavní tlačítko dropdownu */
+li.dropdown a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    background-color: rgb(40, 40, 40);
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover efekt na hlavním tlačítku */
+li.dropdown a:hover {
+    background-color: #474646;
+}
+
+/* Styl dropdown menu */
+ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(54, 54, 54);
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Odkazy v dropdown menu */
+ul.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+ul.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover efekt na položky dropdownu */
+ul.dropdown-menu li a:hover {
+    background-color: #474646;
+}
+
+/* Aktivní položka */
+ul.dropdown-menu .Active {
+    background-color: #ff3030;
+}
+
+/* Zobrazení dropdown menu při hoveru */
+li.dropdown:hover .dropdown-menu {
+    display: block;
+}

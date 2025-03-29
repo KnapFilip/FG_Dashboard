@@ -96,35 +96,119 @@ li a:hover {
 .Active {
     background-color: #ff3030;
 }
-div.content{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-    height: 100%;
-    overflow: hidden;
+/* Dropdown v navigaci */
+li.dropdown {
+    position: relative;
+    display: block;
     text-align: center;
-    display: inline-block;
-}
-div.profile_info{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-}
-div.info{
-    overflow: hidden;
-    display: flex;
-    text-align: center;
-    flex-direction: row;
-   
 }
 
-div.news{
-    margin-left: 15%;
-    padding: 1px;
-    width: 75%;
-    top: 1%;
-    overflow: hidden;
+/* Hlavní tlačítko dropdownu */
+li.dropdown a {
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
+    background-color: rgb(40, 40, 40);
+    transition: background 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Hover efekt na hlavním tlačítku */
+li.dropdown a:hover {
+    background-color: #474646;
+}
+
+/* Styl dropdown menu */
+ul.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(54, 54, 54);
+    min-width: 200px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* Odkazy v dropdown menu */
+ul.dropdown-menu li {
+    margin: 0;
+    padding: 0;
+}
+
+ul.dropdown-menu li a {
+    display: block;
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Hover efekt na položky dropdownu */
+ul.dropdown-menu li a:hover {
+    background-color: #474646;
+}
+
+/* Aktivní položka */
+ul.dropdown-menu .Active {
+    background-color: #ff3030;
+}
+
+/* Zobrazení dropdown menu při hoveru */
+li.dropdown:hover .dropdown-menu {
+    display: block;
+}
+div.profile-pass {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Padding zajistí, že obsah gridu bude mít odsazení 20% od levého a pravého okraje */
+    padding: 0 20%;
+    gap: 20px; /* Volitelný odstup mezi sloupci */
+}
+  
+  div.profile {
+    /* Obsah se zarovná vlevo v rámci své grid buňky */
+    justify-self: start;
+}
+  
+  div.password {
+    /* Obsah se zarovná vpravo v rámci své grid buňky */
+    justify-self: end;
+}
+  input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  input[type="submit"] {
+    background-color: #232423;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    cursor: pointer;
+}
+    input[type="submit"]:hover {
+        background-color: #3b0000;
+}
+label {
+    color: white;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+  

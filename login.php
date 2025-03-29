@@ -18,16 +18,18 @@
 
 <body>
     <div class="login">
-        <form action="php/login.php" method="POST" enctype="multipart/form-data"></form>
-        <h1>Login</h1><br>
-        <label for="username">Uživatelské jméno</label><br>
-        <input type="text" id="username" name="username" required><br>
-        <label for="emaik">Email</label><br>
-        <input type="email" id="email" name="email" required><br>
-        <label for="password">Heslo</label><br>
-        <input type="password" id="password" name="password" required><br><br>
-        <input type="submit" value="Přihlásit se"><br><br>
+        <form action="php/login.php" method="POST">
+            <h1>Login</h1>
+
+            <label for="username_or_email">Uživatelské jméno nebo Email</label><br>
+            <input type="text" id="username_or_email" name="username_or_email" required><br>
+
+            <label for="password">Heslo</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <input type="submit" value="Přihlásit se"><br><br>
         </form>
+        <h3><a href="registration.php">Nemáte účet? Zaregistrujte se zde.</a></h3>
     </div>
 </body>
 <footer>

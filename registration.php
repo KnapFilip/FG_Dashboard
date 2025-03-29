@@ -19,7 +19,7 @@ require_once 'php/username_verify.php';
 
 <body>
     <div class="registration">
-        <form id="registerForm" action="php/registration.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm(event)">
+        <form id="registerForm" action="php/registration.php" method="POST" enctype="multipart/form-data" onsubmit="return validatepassword(event)" oninput="checkUsername()">
             <h2>Registrační formulář</h2>
 
             <label for="name">Jméno</label><br>
@@ -45,6 +45,7 @@ require_once 'php/username_verify.php';
 
             <input type="submit" value="Registrovat se">
         </form>
+        <h3><a href="login.php">Již máte účet? Přihlašte se zde.</a></h3>
     </div>
 
 </body>

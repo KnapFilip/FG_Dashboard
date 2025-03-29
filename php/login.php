@@ -1,53 +1,74 @@
 <?php
 session_start();
 
+// Zobrazení errorů pro debug (v produkci vypnout!)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Připojení k databázi
 $servername = "cz1.helkor.eu";
 $username = "u1918_D7TSELSLDS";
 $password = "l4B@l6OAg!xFgY.Wc89XKyjZ";
 $dbname = "s1918_dashboard";
 
-// PDO připojení k databázi
-try {
-    $pdo = new PDO("mysql:host=$servername;port=3306;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    die("Chyba připojení k databázi.");
+$conn = new mysqli($servername, $username, $password, $dbname);
+if ($conn->connect_error) {
+    die("❌ Chyba připojení k databázi.");
 }
 
-$error = ''; // Inicializace proměnné pro chyby
+// Funkce na ošetření vstupních dat
+function cleanInput($conn, $data)
+{
+    return htmlspecialchars(mysqli_real_escape_string($conn, trim($data)));
+}
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Ošetření vstupů z formuláře
-    $username = trim($_POST['username'] ?? '');
-    $password = $_POST['password'] ?? '';
+// Kontrola, zda jsou vyplněná povinná pole
+if (empty($_POST['username_or_email']) || empty($_POST['password'])) {
+    die("❌ Musíte vyplnit všechny údaje.");
+}
 
-    // Validace, zda jsou pole vyplněná
-    if (!empty($username) && !empty($password)) {
-        // Příprava SQL dotazu pro vyhledání uživatele podle jména
-        $stmt = $pdo->prepare("SELECT * FROM User WHERE username = :username");
-        $stmt->bindValue(':username', $username, PDO::PARAM_STR);
-        $stmt->execute();
-        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+$usernameOrEmail = cleanInput($conn, $_POST['username_or_email']);
+$password = $_POST['password'];
 
-        // Ověření, zda existuje uživatel a zda je heslo správné
-        if ($user && password_verify($password, $user['password'])) {
-            session_regenerate_id(true); // Zabrání session hijackingu
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['username'] = $user['username'];
+// Kontrola existence uživatele (username NEBO email)
+$stmt = $conn->prepare("SELECT id, username, email, password_hash, role_id FROM users WHERE username = ? OR email = ?");
+$stmt->bind_param("ss", $usernameOrEmail, $usernameOrEmail);
+$stmt->execute();
+$result = $stmt->get_result();
 
-            // Přesměrování na dashboard po úspěšném přihlášení
-            header("Location: ../dashboard.php");
-            exit;
-        } else {
-            // Chyba, pokud je uživatelské jméno nebo heslo nesprávné
-            $error = "Neplatné uživatelské jméno nebo heslo.";
+if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+
+    // Ověření hesla
+    if (password_verify($password, $user['password_hash'])) {
+        // Regenerace session ID pro bezpečnost
+        session_regenerate_id(true);
+
+        // Uložení údajů do SESSION
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['email'] = $user['email'];
+        $_SESSION['role_id'] = $user['role_id'];
+
+        // Přesměrování podle role
+        switch ($user['role_id']) {
+            case 1:
+                header("Location: https://dash.knapf.eu/dashboard.php");
+                break;
+            case 2:
+                header("Location: https://dash.knapf.eu/dashboard.php");
+                break;
+            default:
+                header("Location: https://dash.knapf.eu/dashboard.php");
         }
+        exit();
     } else {
-        // Chyba, pokud některé pole není vyplněné
-        $error = "Vyplňte prosím všechna pole.";
+        die("❌ Chybné heslo.");
     }
+} else {
+    die("❌ Uživatel neexistuje.");
 }
 
-if ($error) {
-    echo "<p style='color:red;'>$error</p>"; // Zobrazení chybové zprávy
-}
+// Zavření spojení
+$stmt->close();
+$conn->close();
